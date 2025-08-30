@@ -1,0 +1,249 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Mechanical Engineering Theme Colors */
+    --background: 210 25% 8%;
+    --foreground: 210 40% 98%;
+
+    --card: 210 35% 12%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 210 35% 12%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 25 95% 55%; /* Energetic orange */
+    --primary-foreground: 210 25% 8%;
+
+    --secondary: 210 25% 16%; /* Steel grey */
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 210 25% 16%;
+    --muted-foreground: 210 20% 65%;
+
+    --accent: 220 91% 65%; /* Deep blue accent */
+    --accent-foreground: 210 40% 98%;
+
+    --metallic: 210 15% 75%; /* Metallic silver */
+    --metallic-foreground: 210 25% 8%;
+
+    --gear: 25 95% 55%; /* Gear orange */
+    --gear-foreground: 210 25% 8%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 210 25% 20%;
+    --input: 210 25% 16%;
+    --ring: 25 95% 55%;
+
+    --radius: 0.75rem;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(25 95% 55%), hsl(35 85% 60%));
+    --gradient-secondary: linear-gradient(135deg, hsl(210 25% 16%), hsl(210 35% 12%));
+    --gradient-hero: linear-gradient(135deg, hsl(210 25% 8%), hsl(220 91% 20%));
+    --gradient-metallic: linear-gradient(135deg, hsl(210 15% 75%), hsl(210 20% 85%));
+
+    /* Shadows */
+    --shadow-glow: 0 0 30px hsl(25 95% 55% / 0.3);
+    --shadow-metallic: 0 10px 30px -10px hsl(210 15% 20% / 0.4);
+    --shadow-deep: 0 20px 40px -20px hsl(210 25% 8% / 0.8);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 210 35% 12%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 25 95% 55%;
+    --sidebar-primary-foreground: 210 25% 8%;
+    --sidebar-accent: 210 25% 16%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 210 25% 20%;
+    --sidebar-ring: 25 95% 55%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-poppins;
+  }
+
+  /* Custom animations */
+  .gear-rotate {
+    animation: rotate 10s linear infinite;
+  }
+
+  .gear-rotate-reverse {
+    animation: rotate-reverse 8s linear infinite;
+  }
+
+  .fade-in-up {
+    animation: fade-in-up 0.6s ease-out forwards;
+  }
+
+  .slide-in-left {
+    animation: slide-in-left 0.8s ease-out forwards;
+  }
+
+  .slide-in-right {
+    animation: slide-in-right 0.8s ease-out forwards;
+  }
+
+  .glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  /* Metallic text shimmer for hero title */
+  .metallic-shimmer {
+    background-image: linear-gradient(90deg, #e5e7eb 0%, #ffffff 25%, #d1d5db 50%, #ffffff 75%, #e5e7eb 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: text-shimmer 3s linear infinite;
+    text-shadow: 0 2px 12px rgba(255,255,255,0.15);
+  }
+
+  @keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  @keyframes rotate-reverse {
+    from { transform: rotate(360deg); }
+    to { transform: rotate(0deg); }
+  }
+
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slide-in-left {
+    from {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slide-in-right {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  /* Header-only shine effects */
+  .header-logo-shine {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .header-logo-shine::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -150%;
+    height: 100%;
+    width: 50%;
+    background: linear-gradient(120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0) 100%);
+    transform: skewX(-20deg);
+    animation: shine-sweep 2.8s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  @keyframes shine-sweep {
+    0% { left: -150%; }
+    100% { left: 150%; }
+  }
+
+  .header-text-shine {
+    background-image: linear-gradient(
+      90deg,
+      rgba(255,255,255,0.95) 0%,
+      #ffffff 30%,
+      rgba(255,255,255,0.7) 45%,
+      #ffffff 60%,
+      rgba(255,255,255,0.95) 100%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: text-shimmer 3.2s linear infinite;
+  }
+
+  @keyframes text-shimmer {
+    0% { background-position: 200% center; }
+    100% { background-position: -200% center; }
+  }
+
+  /* Scroll behavior */
+  html {
+    scroll-behavior: smooth;
+  }
+}
