@@ -1,15 +1,17 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Phone, Mail, User } from "lucide-react";
+import { Phone, Mail } from "lucide-react";
+import ZoomableImage from "./ZoomableImage";
 
 interface CoordinatorCardProps {
   name: string;
   role: string;
   phone: string;
   email: string;
+  image: string;
 }
 
-const CoordinatorCard = ({ name, role, phone, email }: CoordinatorCardProps) => {
+const CoordinatorCard = ({ name, role, phone, email, image }: CoordinatorCardProps) => {
   const handlePhoneClick = () => {
     window.open(`tel:${phone}`, "_self");
   };
@@ -22,9 +24,9 @@ const CoordinatorCard = ({ name, role, phone, email }: CoordinatorCardProps) => 
     <Card className="group bg-card/80 backdrop-blur-sm border-border hover:border-primary/50 transition-all duration-300 hover:scale-105 hover:shadow-glow h-full">
       <CardContent className="p-3 md:p-6">
         <div className="text-center space-y-2 md:space-y-4">
-          {/* Avatar */}
-          <div className="w-12 h-12 md:w-16 md:h-16 mx-auto bg-gradient-primary rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-            <User className="h-6 w-6 md:h-8 md:w-8 text-gear-foreground" />
+          {/* Coordinator Image */}
+          <div className="w-20 h-20 md:w-24 md:h-24 mx-auto rounded-full overflow-hidden">
+            <ZoomableImage src={image} alt={`${name}, ${role}`} className="w-full h-full object-cover" />
           </div>
 
           {/* Name & Role */}
