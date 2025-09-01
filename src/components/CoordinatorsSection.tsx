@@ -13,29 +13,29 @@ const CoordinatorsSection = () => {
     {
       name: "Kartik Pharande",
       role: "Coordinator",
-      phone: "+91-9811111111",
+      phone: "+91-98111 11111",
       email: "kartik.pharande@mechmerise.com",
       image: coordinator1
     },
     {
       name: "Vedant Giri",
       role: "Co Coordinator",
-      phone: "+91-9028488203",
+      phone: "+91-90284 88203",
       email: "girivedant11@gmail.com",
       image: coordinator2
     },
     {
       name: "Yashasvi Bhoyar",
       role: "Co Coordinator",
-      phone: "+91-9833333333",
-      email: "yashasvi.bhoyar@mechmerise.com",
+      phone: "+91 88884 76344",
+      email: "yashasvib1504@gmail.com",
       image: coordinator3
     },
     {
       name: "Nachiket Jakate",
       role: "Finance Coordinator",
-      phone: "+91-9876543211",
-      email: "nachiket.jakate@mechmerise.com",
+      phone: "+91 93092 75120",
+      email: "jakate.nachiket@gmail.com",
       image: coordinator4
     },
     {
@@ -48,21 +48,21 @@ const CoordinatorsSection = () => {
     {
       name: "Aman Raut",
       role: "Publicity & Promotion Coordinator",
-      phone: "+91-9876543213",
-      email: "aman.raut@mechmerise.com",
+      phone: "+91 95792 34802",
+      email: "amanraut83@gmail.com",
       image: coordinator6
     },
     {
       name: "Himanshu Naidu",
       role: "Anchoring & Stage Coordination Coordinator",
-      phone: "+91-9876543214",
-      email: "himanshu.naidu@mechmerise.com",
+      phone: "+91 79720 59337",
+      email: "naiduhimanshu13@gmail.com",
       image: coordinator7
     },
     {
       name: "Jayesh Gajbhiye",
       role: "Discipline Coordinator",
-      phone: "+91-9876543215",
+      phone: "+91-98765 43215",
       email: "jayesh.gajbhiye@mechmerise.com",
       image: coordinator8
     }
