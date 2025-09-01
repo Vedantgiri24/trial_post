@@ -41,8 +41,8 @@ const CoordinatorsSection = () => {
     {
       name: "Paurush Nirwan",
       role: "Media Coordinator",
-      phone: "+91-9876543212",
-      email: "paurush.nirwan@mechmerise.com",
+      phone: "+91 76664 19717",
+      email: "paurush4422@gmail.com",
       image: coordinator5
     },
     {

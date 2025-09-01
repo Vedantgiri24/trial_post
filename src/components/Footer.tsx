@@ -5,7 +5,11 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const handleInstagramClick = () => {
-    window.open("https://www.instagram.com/svpcetmechmerise2k25/?igsh=MXZnYjF5dHVqMWpzYQ%3D%3D#", "_blank");
+    window.open("https://www.instagram.com/svpcetmechmerise2k25/", "_blank");
+  };
+
+  const handleLocationClick = () => {
+    window.open("https://www.google.com/maps/place/St.+Vincent+Pallotti+College+of+Engineering+and+Technology/@21.0046708,79.0451583,17z/data=!3m1!4b1!4m6!3m5!1s0x3bd4bdc6b03bfded:0x51964eb66fa3ec5e!8m2!3d21.0046708!4d79.0477332!16s%2Fm%2F0cp4krn?entry=ttu&g_ep=EgoyMDI1MDgyNS4wIKXMDSoASAFQAw%3D%3D.", "_blank");
   };
 
   return (
@@ -21,8 +25,8 @@ const Footer = () => {
               </div>
             </div>
             <p className="text-muted-foreground max-w-md">
-              The premier technical festival of mechanical engineering that celebrates 
-              innovation, creativity, and excellence in engineering.
+              The premier technical festival of Mechanical Engineering that celebrates 
+              innovation, creativity, and excellence in Engineering.
             </p>
           </div>
 
@@ -61,13 +65,13 @@ const Footer = () => {
                   <div className="text-sm text-muted-foreground">10 Oct 2025</div>
                 </div>
               </div>
-              <div className="flex items-center space-x-3">
+              <div className="flex items-center space-x-3 cursor-pointer" onClick={handleLocationClick}>
                 <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center">
                   <MapPin className="h-4 w-4 text-gear-foreground" />
                 </div>
                 <div>
                   <div className="text-sm font-medium text-foreground">Location</div>
-                  <div className="text-sm text-muted-foreground">St. Vincent Pallotti College of Engineering and Technology</div>
+                  <div className="text-sm text-muted-foreground hover:text-white transition-colors duration-300">St. Vincent Pallotti College of Engineering and Technology</div>
                 </div>
               </div>
               <div className="flex items-center space-x-3">
@@ -89,10 +93,15 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t border-border text-center">
-          <p className="text-muted-foreground">
-            © {currentYear} MECHMERISE. Made with <Heart className="inline h-4 w-4 text-red-500" /> by the MECHMERISE Team.
-          </p>
+        <div className="mt-12 pt-8 border-t border-border">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <p className="text-muted-foreground mb-2 md:mb-0">
+              © 2025 MECHMERISE | Presented with <Heart className="inline h-4 w-4 text-red-500" /> by the Department of Mechanical Engineering
+            </p>
+            <p className="text-muted-foreground font-montserrat font-thin text-xs tracking-wider">
+              Design & Developed by : Vedant Giri
+            </p>
+          </div>
         </div>
       </div>
     </footer>
