@@ -8,11 +8,14 @@ interface EventCardProps {
   duration?: string;
   maxParticipants?: string;
   prize?: string;
+  formLink?: string;
 }
 
-const EventCard = ({ title, description, image }: EventCardProps) => {
+const EventCard = ({ title, description, image, formLink }: EventCardProps) => {
   const handleRegisterClick = () => {
-    window.open("https://docs.google.com/forms/d/e/1FAIpQLScjhoCUOYDv0KklOcItuv9_6JiCE7TnVSJCrOZtPXzjaAKl1g/viewform?usp=header.", "_blank");
+    // Use the provided form link or fallback to a default one
+    const link = formLink || "https://docs.google.com/forms/d/e/1FAIpQLScjhoCUOYDv0KklOcItuv9_6JiCE7TnVSJCrOZtPXzjaAKl1g/viewform?usp=header.";
+    window.open(link, "_blank");
   };
   return (
     <Card className="group h-full flex flex-col overflow-hidden bg-card border-border hover:border-primary/50 transition-all duration-300 hover:scale-105 hover:shadow-glow">

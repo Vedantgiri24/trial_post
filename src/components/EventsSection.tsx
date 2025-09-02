@@ -14,7 +14,8 @@ const EventsSection = () => {
       image: hero3,
       duration: "3 hours",
       maxParticipants: "Teams of 2-3",
-      prize: "₹15,000"
+      prize: "₹15,000",
+      formLink: "https://docs.google.com/forms/d/e/1FAIpQLScjhoCUOYDv0KklOcItuv9_6JiCE7TnVSJCrOZtPXzjaAKl1g/viewform?usp=sf_link"
     },
     {
       title: "EV Edge",
@@ -22,7 +23,8 @@ const EventsSection = () => {
       image: hero2,
       duration: "2 hours",
       maxParticipants: "Teams of 3-4",
-      prize: "₹20,000"
+      prize: "₹20,000",
+      formLink: "https://docs.google.com/forms/d/e/1FAIpQLSdXpZCzH-EhwQTOiW9TBCl5fhSLjO9_yHrCWemEDTN1gNKYxg/viewform?usp=sf_link"
     },
     {
       title: "Start Up Genesis 2.0",
@@ -30,7 +32,8 @@ const EventsSection = () => {
       image: hero1,
       duration: "2.5 hours",
       maxParticipants: "Teams of 2-4",
-      prize: "₹8,000"
+      prize: "₹8,000",
+      formLink: "https://docs.google.com/forms/d/e/1FAIpQLSfQKKGk4vbus5BFYxvkm_DUdNUKfAYlm-tVSgz_muCGl7k9Yw/viewform?usp=sf_link"
     },
     {
       title: "3v3 Showdown",
@@ -38,7 +41,8 @@ const EventsSection = () => {
       image: quizImage,
       duration: "1.5 hours",
       maxParticipants: "Teams of 3",
-      prize: "₹10,000"
+      prize: "₹10,000",
+      formLink: "https://docs.google.com/forms/d/e/1FAIpQLSdJKqMvYeYEHK9nNZ5qWmJU8qYYzJWQyRVZ0HNdWg4G8YFZAQ/viewform?usp=sf_link"
     },
     {
       title: "Bridge It",
@@ -46,7 +50,8 @@ const EventsSection = () => {
       image: bridgeImage,
       duration: "4 hours",
       maxParticipants: "Teams of 3-5",
-      prize: "₹12,000"
+      prize: "₹12,000",
+      formLink: "https://docs.google.com/forms/d/e/1FAIpQLSc5J7QGnAi8VCuT8ex8s7yjUYSHxA9jOxYLkI8nsWXcuA7UJA/viewform?usp=sf_link"
     },
     {
       title: "Junkyard Wars",
@@ -54,7 +59,8 @@ const EventsSection = () => {
       image: junkyardImage,
       duration: "5 hours",
       maxParticipants: "Teams of 4-6",
-      prize: "₹18,000"
+      prize: "₹18,000",
+      formLink: "https://docs.google.com/forms/d/e/1FAIpQLSfLxo8ub9DVHmgAO6bFWVk7VJmL2SFTmy0nYKkQqK3TUL3TQw/viewform?usp=sf_link"
     }
   ];
 

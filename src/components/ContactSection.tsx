@@ -139,15 +139,15 @@ const ContactSection = () => {
                   <h3 className="text-base md:text-lg font-semibold text-foreground mb-1 md:mb-2">Phone</h3>
                   <p className="text-sm md:text-base text-muted-foreground">
                     +91 78210 17819<br />
-                    +91 9028488203
+                    +91 90284 88203
                   </p>
                 </div>
               </div>
 
               <div className="flex items-start space-x-3 md:space-x-4 p-4 md:p-6 bg-card/80 backdrop-blur-sm rounded-xl border border-border hover:border-primary/50 transition-all duration-300">
-                <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-primary rounded-lg flex items-center justify-center flex-shrink-0">
+                <a href="mailto:mechmerise2k25@gmail.com" className="w-10 h-10 md:w-12 md:h-12 bg-gradient-primary rounded-lg flex items-center justify-center flex-shrink-0 hover:bg-primary transition-colors duration-300">
                   <Mail className="h-5 w-5 md:h-6 md:w-6 text-gear-foreground" />
-                </div>
+                </a>
                 <div>
                   <h3 className="text-base md:text-lg font-semibold text-foreground mb-1 md:mb-2">Email</h3>
                   <a href="mailto:mechmerise2k25@gmail.com" className="text-sm md:text-base text-muted-foreground hover:text-white transition-colors duration-300">

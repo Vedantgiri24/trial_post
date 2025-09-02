@@ -75,7 +75,7 @@ const Footer = () => {
                 </div>
               </div>
               <div className="flex items-center space-x-3">
-                <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center">
+                <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center cursor-pointer hover:bg-primary transition-colors duration-300" onClick={handleInstagramClick}>
                   <Instagram className="h-4 w-4 text-gear-foreground" />
                 </div>
                 <div>

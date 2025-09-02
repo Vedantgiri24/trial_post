@@ -13,8 +13,8 @@ const CoordinatorsSection = () => {
     {
       name: "Kartik Pharande",
       role: "Coordinator",
-      phone: "+91-98111 11111",
-      email: "kartik.pharande@mechmerise.com",
+      phone: "+91 78210 17819",
+      email: "kartikpharande23@gmail.com",
       image: coordinator1
     },
     {
@@ -63,7 +63,7 @@ const CoordinatorsSection = () => {
       name: "Jayesh Gajbhiye",
       role: "Discipline Coordinator",
       phone: "+91-98765 43215",
-      email: "jayesh.gajbhiye@mechmerise.com",
+      email: "jayesh.gajbhiye@gmail.com",
       image: coordinator8
     }
   ];
