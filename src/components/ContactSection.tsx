@@ -44,7 +44,10 @@ const ContactSection = () => {
   };
 
   const handleAddressClick = () => {
-    window.open("https://www.google.com/maps/place/St.+Vincent+Pallotti+College+of+Engineering+and+Technology/@21.0046708,79.0451583,17z/data=!3m1!4b1!4m6!3m5!1s0x3bd4bdc6b03bfded:0x51964eb66fa3ec5e!8m2!3d21.0046708!4d79.0477332!16s%2Fm%2F0cp4krn?entry=ttu&g_ep=EgoyMDI1MDgxMy4wIKXMDSoASAFQAw%3D%3D", "_blank");
+    window.open(
+      "https://www.google.com/maps/place/St.+Vincent+Pallotti+College+of+Engineering+and+Technology/@21.0046708,79.0451583,17z/data=!3m1!4b1!4m6!3m5!1s0x3bd4bdc6b03bfded:0x51964eb66fa3ec5e!8m2!3d21.0046708!4d79.0477332!16s%2Fm%2F0cp4krn?entry=ttu&g_ep=EgoyMDI1MDgxMy4wIKXMDSoASAFQAw%3D%3D",
+      "_blank"
+    );
   };
 
   return (
@@ -117,7 +120,13 @@ const ContactSection = () => {
           <div className="space-y-4 md:space-y-8 slide-in-right">
             {/* Contact Details */}
             <div className="space-y-4 md:space-y-6 h-full">
-              <div className="flex items-start space-x-3 md:space-x-4 p-4 md:p-6 bg-card/80 backdrop-blur-sm rounded-xl border border-border hover:border-primary/50 transition-all duration-300 cursor-pointer" onClick={handleAddressClick}>
+              
+              {/* Address */}
+              <div
+                className="flex items-start space-x-3 md:space-x-4 p-4 md:p-6 bg-card/80 backdrop-blur-sm 
+                           rounded-xl border border-border hover:border-primary/50 transition-all duration-300 cursor-pointer"
+                onClick={handleAddressClick}
+              >
                 <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-primary rounded-lg flex items-center justify-center flex-shrink-0">
                   <MapPin className="h-5 w-5 md:h-6 md:w-6 text-gear-foreground" />
                 </div>
@@ -131,6 +140,7 @@ const ContactSection = () => {
                 </div>
               </div>
 
+              {/* Phone */}
               <div className="flex items-start space-x-3 md:space-x-4 p-4 md:p-6 bg-card/80 backdrop-blur-sm rounded-xl border border-border hover:border-primary/50 transition-all duration-300">
                 <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-primary rounded-lg flex items-center justify-center flex-shrink-0">
                   <Phone className="h-5 w-5 md:h-6 md:w-6 text-gear-foreground" />
@@ -144,17 +154,23 @@ const ContactSection = () => {
                 </div>
               </div>
 
-              <div className="flex items-start space-x-3 md:space-x-4 p-4 md:p-6 bg-card/80 backdrop-blur-sm rounded-xl border border-border hover:border-primary/50 transition-all duration-300">
-                <a href="mailto:mechmerise2k25@gmail.com" className="w-10 h-10 md:w-12 md:h-12 bg-gradient-primary rounded-lg flex items-center justify-center flex-shrink-0 hover:bg-primary transition-colors duration-300">
+              {/* Email - Whole Box Clickable */}
+              <a
+                href="mailto:mechmerise2k25@gmail.com"
+                className="flex items-start space-x-3 md:space-x-4 p-4 md:p-6 bg-card/80 backdrop-blur-sm 
+                           rounded-xl border border-border hover:border-primary/50 transition-all duration-300"
+              >
+                <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-primary rounded-lg flex items-center justify-center flex-shrink-0 hover:bg-primary transition-colors duration-300">
                   <Mail className="h-5 w-5 md:h-6 md:w-6 text-gear-foreground" />
-                </a>
+                </div>
                 <div>
                   <h3 className="text-base md:text-lg font-semibold text-foreground mb-1 md:mb-2">Email</h3>
-                  <a href="mailto:mechmerise2k25@gmail.com" className="text-sm md:text-base text-muted-foreground hover:text-white transition-colors duration-300">
+                  <p className="text-sm md:text-base text-muted-foreground hover:text-white transition-colors duration-300">
                     mechmerise2k25@gmail.com
-                  </a>
+                  </p>
                 </div>
-              </div>
+              </a>
+
             </div>
           </div>
         </div>

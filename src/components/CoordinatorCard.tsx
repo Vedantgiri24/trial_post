@@ -1,3 +1,4 @@
+import { useState, useEffect, useRef } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Phone, Mail } from "lucide-react";
@@ -12,21 +13,61 @@ interface CoordinatorCardProps {
 }
 
 const CoordinatorCard = ({ name, role, phone, email, image }: CoordinatorCardProps) => {
-  const handlePhoneClick = () => {
+  const [isZoomed, setIsZoomed] = useState(false);
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  const handlePhoneClick = (e: React.MouseEvent) => {
+    e.stopPropagation(); // prevent zoom toggle
     window.open(`tel:${phone}`, "_self");
   };
 
-  const handleEmailClick = () => {
+  const handleEmailClick = (e: React.MouseEvent) => {
+    e.stopPropagation(); // prevent zoom toggle
     window.open(`mailto:${email}`, "_self");
   };
 
+  // Close zoom when tapping outside card (mobile only)
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (window.innerWidth < 768) {
+        if (cardRef.current && !cardRef.current.contains(e.target as Node)) {
+          setIsZoomed(false);
+        }
+      }
+    };
+    document.addEventListener("click", handleClickOutside);
+    return () => document.removeEventListener("click", handleClickOutside);
+  }, []);
+
+  // Toggle zoom on card tap (mobile only)
+  const handleCardClick = () => {
+    if (window.innerWidth < 768) {
+      setIsZoomed((prev) => !prev);
+    }
+  };
+
   return (
-    <Card className="group bg-card/80 backdrop-blur-sm border-border hover:border-primary/50 transition-all duration-300 hover:scale-105 hover:shadow-glow h-full">
+    <Card
+      ref={cardRef}
+      onClick={handleCardClick}
+      className={`group bg-card/80 backdrop-blur-sm border-border transition-all duration-300 h-full 
+        ${isZoomed ? "scale-105 border-primary/50" : "scale-100"} 
+        md:hover:border-primary/50 md:hover:scale-105`}
+    >
       <CardContent className="p-3 md:p-6">
         <div className="text-center space-y-2 md:space-y-4">
           {/* Coordinator Image */}
-          <div className="w-20 h-20 md:w-24 md:h-24 mx-auto rounded-full overflow-hidden">
-            <ZoomableImage src={image} alt={`${name}, ${role}`} className="w-full h-full object-cover" />
+          <div
+            className={`w-20 h-20 md:w-24 md:h-24 mx-auto rounded-full overflow-hidden 
+                        transform transition-transform duration-300
+                        ${isZoomed ? "scale-125" : "scale-100"} 
+                        md:group-hover:scale-125`}
+          >
+            <ZoomableImage
+              src={image}
+              alt={`${name}, ${role}`}
+              className="w-full h-full object-cover"
+            />
           </div>
 
           {/* Name & Role */}
@@ -49,7 +90,7 @@ const CoordinatorCard = ({ name, role, phone, email, image }: CoordinatorCardPro
               <Phone className="h-4 w-4 mr-3" />
               {phone}
             </Button>
-            
+
             <Button
               variant="ghost"
               onClick={handleEmailClick}
