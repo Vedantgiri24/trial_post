@@ -1,7 +1,7 @@
 import EventCard from "./EventCard";
-import bridgeImage from "@/assets/event-bridge.jpg";
+import bridgeImage from "@/assets/hvac.jpg";
 import quizImage from "@/assets/event-quiz.jpg";
-import junkyardImage from "@/assets/event-junkyard.jpg";
+import junkyardImage from "@/assets/cnc.jpg";
 import hero1 from "@/assets/hero-1.jpg";
 import hero2 from "@/assets/hero-2.jpg";
 import hero3 from "@/assets/hero-3.jpg";
@@ -15,7 +15,7 @@ const EventsSection = () => {
       duration: "3 hours",
       maxParticipants: "Teams of 2-3",
       prize: "₹15,000",
-      formLink: "https://docs.google.com/forms/d/e/1FAIpQLScjhoCUOYDv0KklOcItuv9_6JiCE7TnVSJCrOZtPXzjaAKl1g/viewform?usp=sf_link"
+      formLink: "https://docs.google.com/forms/d/e/1FAIpQLSfqy2UmCuzj7OlQsNhLmVd8cerHSIxNi1qoCir9CkKMFYnVew/viewform?usp=header"
     },
     {
       title: "EV Edge",
@@ -24,7 +24,7 @@ const EventsSection = () => {
       duration: "2 hours",
       maxParticipants: "Teams of 3-4",
       prize: "₹20,000",
-      formLink: "https://docs.google.com/forms/d/e/1FAIpQLSdXpZCzH-EhwQTOiW9TBCl5fhSLjO9_yHrCWemEDTN1gNKYxg/viewform?usp=sf_link"
+      formLink: "https://docs.google.com/forms/d/e/1FAIpQLSd6y5HvWERxdzsOWlznfKWF5AkUl5OKTrcJNXVFhfTblM7Z4g/viewform?usp=header"
     },
     {
       title: "Start Up Genesis 2.0",
@@ -42,20 +42,20 @@ const EventsSection = () => {
       duration: "1.5 hours",
       maxParticipants: "Teams of 3",
       prize: "₹10,000",
-      formLink: "https://docs.google.com/forms/d/e/1FAIpQLSdJKqMvYeYEHK9nNZ5qWmJU8qYYzJWQyRVZ0HNdWg4G8YFZAQ/viewform?usp=sf_link"
+      formLink: "https://docs.google.com/forms/d/e/1FAIpQLSeGpR2S3rslNFlYO16fpVStinwXnSFjhfRcXdADu5Hju_WDPQ/viewform?usp=header"
     },
     {
-      title: "Bridge It",
-      description: "Build the strongest bridge with limited materials. Apply structural engineering principles to create efficient designs.",
+      title: "HVAC Hustle",
+      description: "An event highlighting smart HVAC innovations through interactive engineering and design challenges.",
       image: bridgeImage,
       duration: "4 hours",
       maxParticipants: "Teams of 3-5",
       prize: "₹12,000",
-      formLink: "https://docs.google.com/forms/d/e/1FAIpQLSc5J7QGnAi8VCuT8ex8s7yjUYSHxA9jOxYLkI8nsWXcuA7UJA/viewform?usp=sf_link"
+      formLink: "https://docs.google.com/forms/d/e/1FAIpQLScnIUv2zoufcRZdvNC1fRAy919VCOxEkWZgrOw5cD-QJyrVtQ/viewform?usp=header"
     },
     {
-      title: "Junkyard Wars",
-      description: "Build innovative machines from scrap materials. Turn waste into wonder with your engineering creativity and problem-solving skills.",
+      title: "CNC",
+      description: "An event showcasing innovative machine building through hands-on CNC and engineering challenges.",
       image: junkyardImage,
       duration: "5 hours",
       maxParticipants: "Teams of 4-6",
