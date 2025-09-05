@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import hero1 from "@/assets/hero-1.jpg";
 import hero2 from "@/assets/hero-2.jpg";
 import hero3 from "@/assets/hero-3.jpg";
+import ca from "@/assets/ca.png";
+import cnc from "@/assets/cnc.png";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 const ImageCarousel = () => {
@@ -11,9 +12,10 @@ const ImageCarousel = () => {
   const isMobile = useIsMobile();
   
   const images = [
-    { src: hero1, alt: "Mechanical Engineering Workshop" },
-    { src: hero2, alt: "Robotics Competition Arena" },
     { src: hero3, alt: "CAD Design Competition" },
+    { src: hero2, alt: "Robotics Competition Arena" },
+    { src: cnc, alt: "CNC" },
+    { src: ca, alt: "CATALYST" },
   ];
 
   useEffect(() => {
