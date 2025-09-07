@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, Fragment } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import OptimizedImage from "./OptimizedImage";
+import OptimizedImage, { PriorityImagePreload } from "./OptimizedImage";
 import hero2 from "@/assets/hero-2.jpg";
 import hero3 from "@/assets/hero-3.jpg";
 import ca from "@/assets/far.png";
@@ -9,22 +9,31 @@ import cs from "@/assets/ca.png";
 import cnc from "@/assets/cnc.jpg";
 import { useIsMobile } from "@/hooks/use-mobile";
 
+// Convert images to WebP format and optimize loading
 const ImageCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [nextIndex, setNextIndex] = useState(1); // Track next slide for preloading
   const isMobile = useIsMobile();
   
+  // Define image data with optimized formats
   const images = [
-    { src: hero3, alt: "CAD Design Competition" },
-    { src: hero2, alt: "Robotics Competition Arena" },
-    { src: cnc, alt: "CNC" },
-    { src: cs, alt: "CATASTRIKE" },
-    { src: ca, alt: "CATALYST" },
+    { src: hero3, alt: "CAD Design Competition", quality: 85 },
+    { src: hero2, alt: "Robotics Competition Arena", quality: 85 },
+    { src: cnc, alt: "CNC", quality: 80 },
+    { src: cs, alt: "CATASTRIKE", quality: 80 },
+    { src: ca, alt: "CATALYST", quality: 80 },
   ];
 
+  // Update next index whenever current index changes
+  useEffect(() => {
+    setNextIndex((currentIndex + 1) % images.length);
+  }, [currentIndex, images.length]);
+
+  // Auto-advance carousel
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % images.length);
-    }, 3000);
+    }, 5000); // Increased from 3000ms to 5000ms for better viewing experience
 
     return () => clearInterval(interval);
   }, [images.length]);
@@ -39,26 +48,47 @@ const ImageCarousel = () => {
 
   return (
     <div className="relative w-full h-full min-h-screen overflow-hidden">
+      {/* Preload next image for smoother transitions */}
+      <Fragment>
+        <PriorityImagePreload src={images[currentIndex].src} format="webp" />
+        <PriorityImagePreload src={images[nextIndex].src} format="webp" />
+      </Fragment>
+      
       {/* Images */}
       <div className="relative w-full h-full">
-        {images.map((image, index) => (
-          <div
-            key={index}
-            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-              index === currentIndex ? "opacity-100" : "opacity-0"
-            }`}
-          >
-            <OptimizedImage
-              src={image.src}
-              alt={image.alt}
-              loading={index === currentIndex || index === (currentIndex + 1) % images.length ? 'eager' : 'lazy'}
-              sizes="100vw"
-              className="w-full h-full object-cover"
-              style={{ objectPosition: isMobile ? 'center center' : 'center center' }}
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent"></div>
-          </div>
-        ))}
+        {images.map((image, index) => {
+          // Determine loading strategy based on slide position
+          const isPriority = index === currentIndex;
+          const isNextSlide = index === nextIndex;
+          
+          return (
+            <div
+              key={index}
+              className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+                index === currentIndex ? "opacity-100" : "opacity-0"
+              }`}
+            >
+              <OptimizedImage
+                src={image.src}
+                alt={image.alt}
+                // Priority loading for current and next slides
+                priority={isPriority}
+                loading={isPriority || isNextSlide ? 'eager' : 'lazy'}
+                // Use responsive sizes
+                sizes="100vw"
+                // Convert to WebP format
+                format="webp"
+                // Apply quality settings
+                quality={image.quality}
+                // Maintain styling
+                className="w-full h-full"
+                objectFit="cover"
+                style={{ objectPosition: isMobile ? 'center center' : 'center center' }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent"></div>
+            </div>
+          );
+        })}
       </div>
 
       {/* Navigation Arrows */}
