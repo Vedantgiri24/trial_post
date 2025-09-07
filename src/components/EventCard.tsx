@@ -1,5 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import OptimizedImage from "./OptimizedImage";
 
 interface EventCardProps {
   title: string;
@@ -20,9 +21,11 @@ const EventCard = ({ title, description, image, formLink }: EventCardProps) => {
   return (
     <Card className="group h-full flex flex-col overflow-hidden bg-card border-border hover:border-primary/50 transition-all duration-300 hover:scale-105 hover:shadow-glow">
       <div className="relative overflow-hidden">
-        <img 
+        <OptimizedImage 
           src={image} 
           alt={title}
+          loading="lazy"
+          sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
           className="w-full h-40 sm:h-44 md:h-48 object-cover transition-transform duration-500 group-hover:scale-110"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import OptimizedImage from "./OptimizedImage";
 import hero2 from "@/assets/hero-2.jpg";
 import hero3 from "@/assets/hero-3.jpg";
 import ca from "@/assets/far.png";
@@ -47,9 +48,11 @@ const ImageCarousel = () => {
               index === currentIndex ? "opacity-100" : "opacity-0"
             }`}
           >
-            <img
+            <OptimizedImage
               src={image.src}
               alt={image.alt}
+              loading={index === currentIndex || index === (currentIndex + 1) % images.length ? 'eager' : 'lazy'}
+              sizes="100vw"
               className="w-full h-full object-cover"
               style={{ objectPosition: isMobile ? 'center center' : 'center center' }}
             />

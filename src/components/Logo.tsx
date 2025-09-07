@@ -1,4 +1,5 @@
 import { useState, useCallback } from "react";
+import OptimizedImage from "./OptimizedImage";
 
 type LogoProps = {
   className?: string;
@@ -26,10 +27,11 @@ export const Logo = ({ className = "w-10 h-10", alt = "Logo" }: LogoProps) => {
   const src = candidateSources[sourceIndex];
 
   return (
-    <img
+    <OptimizedImage
       src={src}
       alt={alt}
       onError={handleError}
+      loading="eager" // Logo should load immediately
       className={`${className} object-contain bg-transparent`}
     />
   );

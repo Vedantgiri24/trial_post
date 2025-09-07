@@ -1,13 +1,16 @@
 import { useState, useEffect, useRef } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
+import OptimizedImage from './OptimizedImage';
 
 interface ZoomableImageProps {
   src: string;
   alt: string;
   className?: string;
+  width?: number;
+  height?: number;
 }
 
-const ZoomableImage = ({ src, alt, className = '' }: ZoomableImageProps) => {
+const ZoomableImage = ({ src, alt, className = '', width, height }: ZoomableImageProps) => {
   const [isZoomed, setIsZoomed] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const [isMobileZoomed, setIsMobileZoomed] = useState(false);
@@ -50,15 +53,20 @@ const ZoomableImage = ({ src, alt, className = '' }: ZoomableImageProps) => {
 
   return (
     <>
-      <img
-        ref={imageRef}
-        src={src}
-        alt={alt}
-        onClick={isMobile ? toggleZoom : undefined}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-        className={`cursor-pointer transition-transform duration-300 ${isMobile ? (isMobileZoomed ? 'scale-135' : '') : (isHovered ? 'scale-110' : '')} ${className}`}
-      />
+      <div ref={imageRef}>
+        <OptimizedImage
+          src={src}
+          alt={alt}
+          width={width}
+          height={height}
+          loading="lazy"
+          sizes="(max-width: 768px) 100vw, 50vw"
+          onClick={isMobile ? toggleZoom : undefined}
+          onLoad={() => {}}
+          onError={() => {}}
+          className={`cursor-pointer transition-transform duration-300 ${isMobile ? (isMobileZoomed ? 'scale-135' : '') : (isHovered ? 'scale-110' : '')} ${className}`}
+        />
+      </div>
 
       {/* Zoomed overlay (only shown when zoomed on desktop) */}
       {!isMobile && isZoomed && (
@@ -67,9 +75,10 @@ const ZoomableImage = ({ src, alt, className = '' }: ZoomableImageProps) => {
           onClick={toggleZoom}
         >
           <div className="relative max-w-4xl max-h-[90vh] overflow-hidden">
-            <img
+            <OptimizedImage
               src={src}
               alt={alt}
+              loading="eager"
               className="max-w-full max-h-[90vh] object-contain"
             />
           </div>
