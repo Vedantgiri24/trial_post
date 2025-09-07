@@ -1,10 +1,13 @@
 import EventCard from "./EventCard";
 import bridgeImage from "@/assets/hvac.png";
 import quizImage from "@/assets/event-quiz.jpg";
-import junkyardImage from "@/assets/cnc.png";
+import junkyardImage from "@/assets/cnc.jpg";
 import hero1 from "@/assets/Startup.png";
 import hero2 from "@/assets/hero-2.jpg";
 import hero3 from "@/assets/hero-3.jpg";
+import caImage from "@/assets/ca.png"; // CatastStrike image
+import ggImage from "@/assets/far.png"; // TAR Workshop image
+import aoImage from "@/assets/Automation.png"; // FAR Workshop image
 
 const EventsSection = () => {
   const events = [
@@ -33,7 +36,7 @@ const EventsSection = () => {
       duration: "2.5 hours",
       maxParticipants: "Teams of 2-4",
       prize: "₹8,000",
-      formLink: "https://docs.google.com/forms/d/e/1FAIpQLSfQKKGk4vbus5BFYxvkm_DUdNUKfAYlm-tVSgz_muCGl7k9Yw/viewform?usp=sf_link"
+      formLink: "https://docs.google.com/forms/d/e/1FAIpQLSd1wZ2KuFefgC2d6Ni0qQmSJespi6n-pXEpCWck5Dj25i9w4w/viewform?usp=header"
     },
     {
       title: "3v3 Showdown",
@@ -60,7 +63,34 @@ const EventsSection = () => {
       duration: "5 hours",
       maxParticipants: "Teams of 4-6",
       prize: "₹18,000",
-      formLink: "https://docs.google.com/forms/d/e/1FAIpQLSfLxo8ub9DVHmgAO6bFWVk7VJmL2SFTmy0nYKkQqK3TUL3TQw/viewform?usp=sf_link"
+      formLink: "https://docs.google.com/forms/d/e/1FAIpQLSf0SARTRWlAlUMOg8U8q3wLJzJb93IH5SI3EE09Ps8GZhiIjA/viewform?usp=header"
+    },
+    {
+      title: "TAR & FAR workshop",
+      description: "An engaging TAR & FAR workshop for Formula Bharat, enhancing knowledge and real-world application skills.",
+      image: ggImage,
+      duration: "TBD",
+      maxParticipants: "TBD",
+      prize: "TBD",
+      formLink: "https://docs.google.com/forms/d/e/1FAIpQLSeU5-Ix8wbFQYn8A0rDGhjJ3iodGTVZXPUW1bKX5dhxjIOeHQ/viewform?usp=header"
+    },
+    {
+      title: "Catastrike",
+      description: "A thrilling challenge where teams build and launch catapults to hit targets in fast-paced, action-packed rounds.",
+      image: caImage,
+      duration: "TBD",
+      maxParticipants: "TBD",
+      prize: "TBD",
+      formLink: "https://docs.google.com/forms/d/e/1FAIpQLSfPzAhrVPRYU-4xe-XGN3VyqhLWLENgVAbl8shhDUNI-zAwKg/viewform?usp=header"
+    },
+    {
+      title: "Automation",
+      description: "An event showcasing Arduino-based automation through hands-on building and programming challenges",
+      image: aoImage,
+      duration: "TBD",
+      maxParticipants: "TBD",
+      prize: "TBD",
+      formLink: "https://docs.google.com/forms/d/e/1FAIpQLSdOgelReyjNRWhQyGBLf2fKwMvGXdZAh94yGKqxsesm21o2xQ/viewform?usp=header"
     }
   ];
 

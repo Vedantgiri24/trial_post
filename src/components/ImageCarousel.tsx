@@ -3,8 +3,9 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import hero2 from "@/assets/hero-2.jpg";
 import hero3 from "@/assets/hero-3.jpg";
-import ca from "@/assets/ca.png";
-import cnc from "@/assets/cnc.png";
+import ca from "@/assets/far.png";
+import cs from "@/assets/ca.png";
+import cnc from "@/assets/cnc.jpg";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 const ImageCarousel = () => {
@@ -15,6 +16,7 @@ const ImageCarousel = () => {
     { src: hero3, alt: "CAD Design Competition" },
     { src: hero2, alt: "Robotics Competition Arena" },
     { src: cnc, alt: "CNC" },
+    { src: cs, alt: "CATASTRIKE" },
     { src: ca, alt: "CATALYST" },
   ];
 
