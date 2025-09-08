@@ -6,7 +6,7 @@ import coordinator4 from "../assets/coordinators/jpg/coordinator4.jpg";
 import coordinator5 from "../assets/coordinators/jpg/coordinator5.jpg";
 import coordinator6 from "../assets/coordinators/jpg/coordinator6.jpg";
 import coordinator7 from "../assets/coordinators/jpg/coordinator7.jpg";
-import coordinator8 from "../assets/coordinators/jpg/coordinator88.jpg";
+import coordinator8 from "../assets/coordinators/jpg/coordinator8.jpg";
 
 const CoordinatorsSection = () => {
   const coordinators = [
