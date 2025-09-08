@@ -5,8 +5,6 @@ import OptimizedImage, { PriorityImagePreload } from "./OptimizedImage";
 import hero2 from "@/assets/hero-2.jpg";
 import hero3 from "@/assets/hero-3.jpg";
 import ca from "@/assets/far.png";
-import cs from "@/assets/ca.png";
-import cnc from "@/assets/cnc.jpg";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 // Convert images to WebP format and optimize loading
@@ -19,8 +17,6 @@ const ImageCarousel = () => {
   const images = [
     { src: hero3, alt: "CAD Design Competition", quality: 85 },
     { src: hero2, alt: "Robotics Competition Arena", quality: 85 },
-    { src: cnc, alt: "CNC", quality: 80 },
-    { src: cs, alt: "CATASTRIKE", quality: 80 },
     { src: ca, alt: "CATALYST", quality: 80 },
   ];
 
