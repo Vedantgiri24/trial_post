@@ -2,7 +2,7 @@ import EventCard from "./EventCard";
 import bridgeImage from "@/assets/hvac.png";
 import quizImage from "@/assets/event-quiz.jpg";
 import junkyardImage from "@/assets/cnc.png";
-import hero1 from "@/assets/Startup.png";
+import hero1 from "@/assets/Startup.jpg";
 import hero2 from "@/assets/hero-2.jpg";
 import hero3 from "@/assets/hero-3.jpg";
 import caImage from "@/assets/ca.png"; // CatastStrike image
@@ -57,7 +57,7 @@ const EventsSection = () => {
       formLink: "https://docs.google.com/forms/d/e/1FAIpQLScnIUv2zoufcRZdvNC1fRAy919VCOxEkWZgrOw5cD-QJyrVtQ/viewform?usp=header"
     },
     {
-      title: "CNC",
+      title: "Techforge",
       description: "An event showcasing innovative machine building through hands-on CNC and engineering challenges.",
       image: junkyardImage,
       duration: "5 hours",
@@ -66,7 +66,7 @@ const EventsSection = () => {
       formLink: "https://docs.google.com/forms/d/e/1FAIpQLSf0SARTRWlAlUMOg8U8q3wLJzJb93IH5SI3EE09Ps8GZhiIjA/viewform?usp=header"
     },
     {
-      title: "TAR & FAR workshop",
+      title: "Ignitron",
       description: "An engaging TAR & FAR workshop for Formula Bharat, enhancing knowledge and real-world application skills.",
       image: ggImage,
       duration: "TBD",
@@ -84,7 +84,7 @@ const EventsSection = () => {
       formLink: "https://docs.google.com/forms/d/e/1FAIpQLSfPzAhrVPRYU-4xe-XGN3VyqhLWLENgVAbl8shhDUNI-zAwKg/viewform?usp=header"
     },
     {
-      title: "Automation",
+      title: "Roboarena",
       description: "An event showcasing Arduino-based automation through hands-on building and programming challenges",
       image: aoImage,
       duration: "TBD",
