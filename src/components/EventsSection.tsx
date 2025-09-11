@@ -48,7 +48,7 @@ const EventsSection = () => {
       formLink: "https://docs.google.com/forms/d/e/1FAIpQLSeGpR2S3rslNFlYO16fpVStinwXnSFjhfRcXdADu5Hju_WDPQ/viewform?usp=header"
     },
     {
-      title: "HVAC Hustle",
+      title: "EscapeX",
       description: "An event highlighting smart HVAC innovations through interactive engineering and design challenges.",
       image: bridgeImage,
       duration: "4 hours",
@@ -57,7 +57,7 @@ const EventsSection = () => {
       formLink: "https://docs.google.com/forms/d/e/1FAIpQLScnIUv2zoufcRZdvNC1fRAy919VCOxEkWZgrOw5cD-QJyrVtQ/viewform?usp=header"
     },
     {
-      title: "Techforge",
+      title: "Code-To-Cut",
       description: "An event showcasing innovative machine building through hands-on CNC and engineering challenges.",
       image: junkyardImage,
       duration: "5 hours",
@@ -66,7 +66,7 @@ const EventsSection = () => {
       formLink: "https://docs.google.com/forms/d/e/1FAIpQLSf0SARTRWlAlUMOg8U8q3wLJzJb93IH5SI3EE09Ps8GZhiIjA/viewform?usp=header"
     },
     {
-      title: "Ignitron",
+      title: "Race Ready",
       description: "An engaging TAR & FAR workshop for Formula Bharat, enhancing knowledge and real-world application skills.",
       image: ggImage,
       duration: "TBD",

@@ -1,4 +1,5 @@
 import CoordinatorCard from "./CoordinatorCard";
+import fcoordinator from "../assets/coordinators/jpg/fcoordinator.jpg";
 import coordinator1 from "../assets/coordinators/jpg/coordinator1.jpg";
 import coordinator2 from "../assets/coordinators/jpg/coordinator2.jpg";
 import coordinator3 from "../assets/coordinators/jpg/coordinator3.jpg";
@@ -10,6 +11,13 @@ import coordinator8 from "../assets/coordinators/jpg/coordinator8.jpg";
 
 const CoordinatorsSection = () => {
   const coordinators = [
+    {
+      name: "Dr. Vimal C. Sontake",
+      role: "Faculty Coordinator",
+      phone: "+91 96375 82119",
+      email: "vsontake@stvincentngp.edu.in",
+      image: fcoordinator
+    },
     {
       name: "Kartik Pharande",
       role: "Coordinator",
@@ -76,7 +84,7 @@ const CoordinatorsSection = () => {
             Our <span className="text-white">Team</span>
           </h2>
           <p className="text-base md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Meet the dedicated student coordinators working passionately to make MECHMERISE 2K25 
+            Meet our faculty coordinator and dedicated student coordinators working passionately to make MECHMERISE 2K25 
             an unforgettable experience.
           </p>
         </div>
